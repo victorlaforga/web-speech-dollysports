@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolly Sports Chatbot</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://kit.fontawesome.com/c706fb7cee.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="chat-box">
+        <div class="chat-box-header">
+            <h3>Bericht ons</h3>
+            <p>
+                <i class="fa fa-times"></i>
+            </p>
+        </div>
+        <div class="chat-box-body">
+            <div class="chat-box-body-send">
+                <p>Hallo! Welkom bij Dolly Sports. Hoe kunnen we je vandaag helpen?
+                </p>
+            </div>
+        </div>
+        <div class="chat-box-footer">
+            <!-- <input id="result-text" placeholder="Your text will appear here" disabled="true" type="text"> -->
+            <i class="send btn-white btn-animate fa-solid fa-microphone" onclick="startSpeechRecognition" id="mic"></i>
+        </div>
+    </div>
+
+    <div class="chat-button">
+        <span></span>
+    </div>
+
+
+    <div class="modal">
+        <div class="modal-content">
+            <span class="modal-close-button">&times;</span>
+            <h1>Sluiten</h1>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+
+</html>
