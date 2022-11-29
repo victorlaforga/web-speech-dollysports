@@ -44,6 +44,13 @@ let kleuren = {
     "lila": 'lila',
 }
 
+let altTekstenProductAfbeeldingen = {
+    "product1": '',
+    "product2": '',
+    "product3": '',
+
+}
+
 function createChatBotMessage(message) {
     let messageElement = document.createElement("div");
     messageElement.classList.add("chat-box-body-send");
