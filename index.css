@@ -7,6 +7,15 @@ body {
     font-family: Raleway;
 }
 
+.start-btn {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.005);
+    width: 200px;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+
+}
+
 .chat-box {
     height: 90%;
     width: 400px;
@@ -189,7 +198,7 @@ body {
 }
 
 .chat-button span::after {
-    content: "Message Us";
+    content: "Bericht ons";
     font-size: 14px;
     color: white;
     position: absolute;

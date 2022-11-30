@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <button class="start-btn" onclick="welcomeMessage()"> Start </button>
 
     <div class="chat-box">
         <div class="chat-box-header">
@@ -23,14 +24,14 @@
             </p>
         </div>
         <div class="chat-box-body">
-            <div class="chat-box-body-send">
+            <!-- <div class="chat-box-body-send">
                 <p>Hallo! Welkom bij Dolly Sports. Hoe kunnen we je vandaag helpen?
                 </p>
-            </div>
+            </div> -->
         </div>
         <div class="chat-box-footer">
             <!-- <input id="result-text" placeholder="Your text will appear here" disabled="true" type="text"> -->
-            <i class="send btn-white btn-animate fa-solid fa-microphone" onclick="startSpeechRecognition" id="mic"></i>
+            <i class="send btn-white btn-animate fa-solid fa-microphone" id="mic"></i>
         </div>
     </div>
 
@@ -45,8 +46,9 @@
             <h1>Sluiten</h1>
         </div>
     </div>
+
 </body>
-<script src="index.js"></script>
+<script src="index.js" defer></script>
 
 
 </html>
