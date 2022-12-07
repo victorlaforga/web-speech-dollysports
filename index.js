@@ -13,7 +13,7 @@ let apiCall = {
     "kleuren": "",
 }
 let producten = {
-    "t-shirts": 't-shirts',
+    "sweaters": 'sweaters',
     "shirts": 'shirts',
     "jeans": 'jeans',
     "broek": 'broek',
@@ -23,13 +23,11 @@ let producten = {
 }
 
 let maten = {
-    "klein": 'klein',
     "small": 'small',
     "medium": 'medium',
-    "groot": 'groot',
-    "extra-groot": 'extra-groot',
-    "XL": 'XL',
     "large": 'large',
+    "extra-large": 'extra-large'
+  
 }
 
 let kleuren = {
@@ -50,13 +48,10 @@ let kleurenList = [
     "lila",
 ]
 let matenList = [
-    "klein",
     "small",
     "medium",
-    "groot",
-    "extra-groot",
-    "XL",
     "large",
+    "extra-large"
 ]
 
 let altTekstenProductAfbeeldingen = [
@@ -67,19 +62,19 @@ let altTekstenProductAfbeeldingen = [
 
 ]
 let productKeys = {
-    "een": "een",
-    "twee": "twee",
-    "drie": "drie",
-    "four": "four",
-    "five": "five",
-    "six": "six",
+    "1": "1",
+    "2": "2",
+    "3": "3"
 }
 let textToNumber = {
     // Change one two three into Dutch 
 
-    "een": altTekstenProductAfbeeldingen[0],
-    "twee": altTekstenProductAfbeeldingen[1],
-    "drie": altTekstenProductAfbeeldingen[2],
+    "1": altTekstenProductAfbeeldingen[0],
+    "2": altTekstenProductAfbeeldingen[1],
+    "3": altTekstenProductAfbeeldingen[2],
+    "1": altTekstenProductAfbeeldingen[0],
+    "2": altTekstenProductAfbeeldingen[1],
+    "3": altTekstenProductAfbeeldingen[2],
 
 
 }
@@ -109,7 +104,7 @@ function appendUserMessage(message) {
 function welcomeMessage() {
 
     setTimeout(async () => {
-        utterThis.text = "Hallo daar! Wij zijn Team Dolly en wij laten je elke dag als een trofee schijnen! Klik op de tab toets om te starten";
+        utterThis.text = "Hallo daar! Wij zijn Team Dolly en wij laten je elke dag als een trofee schijnen! Vandaag gaan we je helpen om het juiste product voor je te vinden.";
         await speak(utterThis).then(() => {
             document.getElementsByClassName('chat-button')[0].click();
 
@@ -177,7 +172,7 @@ async function startSpeechRecognition() {
             if (!isSelectingSize && splitText.includes('sizes') || splitText.includes('opmaat') || splitText.includes('maten')) {
                 console.log("IsSelecting Size " + isSelectingSize);
                 utterThis.text =
-                    `Welke maat heb normaal? ${matenList.toString()}`;
+                    `Welke maat heb je meestal voor je kleding? ${matenList.toString()}`;
                 apiCall.maten = maten[splitText[j]];
                 createChatBotMessage(utterThis.text);
                 recognition.stop();
@@ -251,7 +246,7 @@ async function startSpeechRecognition() {
                 .kleuren != "" || apiCall.maten != "")) {
                 // Move to product page exit code follows
                 // This code only runs if product, size and color is selected by user and the item is available
-                utterThis.text = "Top! Ik breng je naar de productpagina."
+                utterThis.text = "Uiteraard Ik breng je naar de productpagina op dit moment, vanaf hier kan je dit product in je winkel, success."
                 createChatBotMessage(utterThis.text);
                 await speak(utterThis);
                 recognition.stop();
@@ -262,7 +257,7 @@ async function startSpeechRecognition() {
 
         }
         if (!matchFound) {
-            utterThis.text = "Dat heb ik niet verstaan, kun je het alsjeblieft nog een keer zeggen."
+            utterThis.text = "Dat heb ik niet verstaan,kunt u dat herhalen, alstublieft."
             createChatBotMessage(utterThis.text);
             await speak(utterThis);
             matchFound = false;
